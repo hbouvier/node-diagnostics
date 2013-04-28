@@ -1,0 +1,19 @@
+{
+    "author"      : "Henri Bouvier",
+    "name"        : "node-diagnostics",
+    "description" : "Logging and Timer to perform some basic profiling and diagnostics",
+    "version"     : "0.0.1",
+    "repository"  : {
+        "type" : "git",
+        "url"  : "https://github.com/hbouvier/node-diagnostics.git"
+    },
+    "keywords": [
+        "log",
+        "timer",
+        "diagnostic"
+    ],
+    "main" : "./lib/diagnostics.js",
+    "engines"              : {
+        "node" : ">= 0.6.0"
+    }
+}
