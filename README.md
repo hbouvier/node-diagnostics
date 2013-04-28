@@ -15,8 +15,8 @@ This module is licensed under the Apache License v2.0
 npm install node-diagnostics
 
 # Include this as a module in your own project
-    // All diagnostics logs will be prefixed with 'MyModuleName'
-    var diag = require('node-diagnostics')('MyModuleName');
+    // All diagnostics logs will be prefixed with 'MyModuleName|42|'
+    var diag = require('node-diagnostics').setPrefix(['MyModuleName',42]).setLevel(3); // info = 3
     
     // Start a timer to display the elapsed time of this section of code.
     var timer = diag.startTimer();
@@ -27,15 +27,15 @@ npm install node-diagnostics
     // value of 'error'!
     diag = diag.setLevel(diag.info);
     
-    diag.log(diag.finest, 'FINEST|Will not be shown, but the string concatenation'
+    diag.log(diag.finest, 'Will not be shown, but the string concatenation'
                           + ' will still be done and the method called, it is'
                           + ' slower than the next invocation.');
-    if (diag.level >= diag.finest) diag.log(diag.finest, 'FINEST|Will not be shown'
+    if (diag.level >= diag.finest) diag.log(diag.finest, 'Will not be shown'
                           + ' but no method invocation and no string concatenation.'
                           + ' this is the prefered way');
     
-    if (diag.level >= diag.info)   diag.log(diag.info, 'INFO|Will be shown!');
-    diag.log(diag.info, 'INFO|Will be shown!');
+    if (diag.level >= diag.info)   diag.log(diag.info, 'Will be shown!');
+    diag.log(diag.info, 'Will be shown!');
     
     
     diag.log(diag.info, 'test ran in ' + timer.stop().format());

@@ -1,4 +1,4 @@
-var diag = require('../lib/diagnostics')(['test', 'prefix1', 'prefix2']).setLevel(1),
+var diag = require('../lib/diagnostics').setPrefix(['test', 'prefix1', 'prefix2']).setLevel(1),
     timer = diag.startTimer();
 
 function testAll(message) {
