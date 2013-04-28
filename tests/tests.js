@@ -1,20 +1,20 @@
-var diag = require('../lib/diagnostics')('test').setLevel(1),
+var diag = require('../lib/diagnostics')(['test', 'prefix1', 'prefix2']).setLevel(1),
     timer = diag.startTimer();
 
 function testAll(message) {
-    if (diag.level >= diag.none) diag.log(diag.none, 'NONE|' + message);
-    if (diag.level >= diag.error) diag.log(diag.error, 'ERROR|' + message);
-    if (diag.level >= diag.warning) diag.log(diag.warning, 'WARNING|' + message);
-    if (diag.level >= diag.info) diag.log(diag.info, 'INFO|' + message);
-    if (diag.level >= diag.fine) diag.log(diag.fine, 'FINE|' + message);
-    if (diag.level >= diag.finest) diag.log(diag.finest, 'FINEST|' + message);
+    if (diag.level >= diag.none) diag.log(diag.none, message);
+    if (diag.level >= diag.severe) diag.log(diag.severe, message);
+    if (diag.level >= diag.warning) diag.log(diag.warning, message);
+    if (diag.level >= diag.info) diag.log(diag.info, message);
+    if (diag.level >= diag.fine) diag.log(diag.fine, message);
+    if (diag.level >= diag.finest) diag.log(diag.finest, message);
     
-    diag.log(diag.none, 'NONE|' + message);
-    diag.log(diag.error, 'ERROR|' + message);
-    diag.log(diag.warning, 'WARNING|' + message);
-    diag.log(diag.info, 'INFO|' + message);
-    diag.log(diag.fine, 'FINE|' + message);
-    diag.log(diag.finest, 'FINEST|' + message);
+    diag.log(diag.none, message);
+    diag.log(diag.severe, message);
+    diag.log(diag.warning, message);
+    diag.log(diag.info, message);
+    diag.log(diag.fine, message);
+    diag.log(diag.finest, message);
 }
 
 console.log('--------------------------------------------');
@@ -25,7 +25,7 @@ diag = diag.setLevel(diag.none);
 testAll('Level set to none');
 
 console.log('--------------------------------------------');
-diag = diag.setLevel(diag.error);
+diag = diag.setLevel(diag.severe);
 testAll('Level set to error');
 
 console.log('--------------------------------------------');
