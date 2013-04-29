@@ -2,7 +2,7 @@
     "author"      : "Henri Bouvier",
     "name"        : "node-diagnostics",
     "description" : "Logging and Timer to perform some basic profiling and diagnostics",
-    "version"     : "0.0.3",
+    "version"     : "0.0.4",
     "repository"  : {
         "type" : "git",
         "url"  : "https://github.com/hbouvier/node-diagnostics.git"
